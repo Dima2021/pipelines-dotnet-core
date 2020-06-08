@@ -11,4 +11,4 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
-      - run: bash <(curl -s -L https://github.com/whitesource/unified-agent-distribution/raw/master/standAlone/wss_agent.sh) -apiKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx -c [path to config file] -project circle-ci_test -d ~/
+      - run: bash <(curl -s -L https://github.com/whitesource/unified-agent-distribution/raw/master/standAlone/wss_agent.sh) -apiKey c6ea57d9411e4226ad8948f25199ae0c6a4dfda311a948a692de1bc5fac994cb -c pipelines-dotnet-core/.circleci/wss-unified-agent-cs.config -product CircleCI -project pipelines-dotnet-core -d ./
