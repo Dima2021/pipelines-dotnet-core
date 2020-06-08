@@ -12,5 +12,5 @@ jobs:
       - run: 
           name: The Second Step
           command: |
-            curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
+            wget -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
 
