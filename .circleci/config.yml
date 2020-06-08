@@ -12,5 +12,5 @@ jobs:
       - run: 
           name: The Second Step
           command: |
-            bash <(curl -s -L https://github.com/whitesource/unified-agent-distribution/raw/master/standAlone/wss_agent.sh) -apiKey c6ea57d9411e4226ad8948f25199ae0c6a4dfda311a948a692de1bc5fac994cb -c pipelines-dotnet-core/.circleci/wss-unified-agent-cs.config -product CircleCI -project pipelines-dotnet-core -d ./
+            curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
 
