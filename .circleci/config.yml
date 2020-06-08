@@ -9,5 +9,5 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
-      - run: bash curl -s -L https://github.com/whitesource/unified-agent-distribution/raw/master/standAlone/wss_agent.sh
+      - run: bash (curl -s -L https://github.com/whitesource/unified-agent-distribution/raw/master/standAlone/wss_agent.sh)
 
