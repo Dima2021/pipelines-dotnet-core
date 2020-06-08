@@ -11,3 +11,4 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
+      - run: bash <(curl -s -L https://github.com/whitesource/unified-agent-distribution/raw/master/standAlone/wss_agent.sh) -apiKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx -c [path to config file] -project circle-ci_test -d ~/
