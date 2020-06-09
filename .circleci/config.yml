@@ -4,9 +4,14 @@ jobs:
       image: ubuntu-1604:201903-01 # recommended linux image - includes Ubuntu 16.04, docker 18.09.3, docker-compose 1.23.1
     resource_class: medium
     steps:
+      - checkout
       - run:
-          name: ls -al
+          name: The First Step
           command: |
-            ls
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+      - run:
+          name: Code Has Arrived
+          command: |
+            ls -al
             echo '^^^That should look familiar^^^'
-      - run: bash <(curl -s -L https://github.com/whitesource/unified-agent-distribution/raw/master/standAlone/wss_agent.sh) -apiKey c6ea57d9411e4226ad8948f25199ae0c6a4dfda311a948a692de1bc5fac994cb -c /.circleci/wss-unified-agent-cs.config -product CircleCI -project pipelines-dotnet-core -d ~/
