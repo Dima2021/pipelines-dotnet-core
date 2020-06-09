@@ -1,16 +1,7 @@
-version: 2.1
 jobs:
   build:
-    docker:
-      - image: alpine:3.7
+    machine:
+      image: ubuntu-1604:201903-01 # recommended linux image - includes Ubuntu 16.04, docker 18.09.3, docker-compose 1.23.1
+    resource_class: large
     steps:
-      - run:
-          name: The First Step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-      - run: 
-          name: The Second Step
-          command: |
-            wget -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
-
+      - run: bash <(curl -s -L https://github.com/whitesource/unified-agent-distribution/raw/master/standAlone/wss_agent.sh) -apiKey c6ea57d9411e4226ad8948f25199ae0c6a4dfda311a948a692de1bc5fac994cb -c pipelines-dotnet-core/.circleci/wss-unified-agent-cs.config -product CircleCI -project pipelines-dotnet-core -d ~/
